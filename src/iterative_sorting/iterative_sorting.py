@@ -50,8 +50,12 @@ def bubble_sort( arr ):
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
-  if maximum < 0:
+  if len(arr) == 0:
     return arr
+  if len([n for n in arr if n < 0]) > 0:
+    return "Error, negative numbers not allowed in Count Sort"
+  if maximum < 0:
+    maximum = max(arr)
   count = [0] * (maximum + 1)
   for x in arr:
     count[x] += 1
@@ -60,7 +64,6 @@ def count_sort( arr, maximum=-1 ):
     for z in range(count[x]):
       arr[total] = x
       total += 1
-
   return arr
 
-print(count_sort([1, 5, 8, 4, 2, 9, 6, 0, 3, 7], 9))
+# print(count_sort([1, 5, 8, 4, 2, 9, 6, 0, 3, 7]))
