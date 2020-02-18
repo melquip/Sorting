@@ -11,7 +11,7 @@ def selection_sort( arr ):
     smallest = current
     # TO-DO: find next smallest element
     # (hint, can do in 3 loc) 
-    for j in range(current, len(arr)):
+    for j in range(current + 1, len(arr)):
       #print(f'current:{current}, smallest:{smallest}')
       #print(f'{arr[j]} < {arr[current]} {arr[j] < arr[current]}')
       if arr[j] < arr[smallest]:

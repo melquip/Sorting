@@ -21,15 +21,12 @@ def splitInHalf(arr):
   return arr[:half], arr[half:]
 # TO-DO: implement the Merge Sort function below USING RECURSION
 def merge_sort( arr ):
-  # TO-DO
-  while len(arr) > 1:
+  if len(arr) > 1:
     p1, p2 = splitInHalf(arr)
-    ms1 = merge_sort(p1)
-    ms2 = merge_sort(p2)
-    return merge(ms1, ms2)
+    return merge(merge_sort(p1), merge_sort(p2))
   return arr
 
-# print(merge_sort([1, 5, 8, 4, 2, 9, 6, 0, 3, 7]))
+print(merge_sort([1, 5, 8, 4, 2, 9, 6, 0, 3, 7]))
 
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
